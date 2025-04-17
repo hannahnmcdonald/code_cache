@@ -1,19 +1,22 @@
 
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@heroui/react";
-import logo from '../../img/code-cache-logo.png';
+import logo from '../../img/logo.svg';
+import './navbar.css'
 
 export const CodeCacheLogo = () => {
   return (
-    <img src={logo} alt="code cache logo"/>
+    <img src={logo} alt="code cache logo" className="logo"/>
   );
 };
 
 export default function NavBar() {
   return (
-    <Navbar>
-      <NavbarBrand>
-        <CodeCacheLogo />
-      </NavbarBrand>
+    <Navbar className="navbar">
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarBrand>
+         <CodeCacheLogo />
+        </NavbarBrand>
+      </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
