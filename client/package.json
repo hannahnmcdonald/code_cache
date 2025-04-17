@@ -1,0 +1,18 @@
+{
+  "name": "UI",
+  "version": "1.0.0",
+  "description": "UI for Code Cache",
+  "main": "index.js",
+  "author": "Hannah McDonald",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@heroui/react": "^2.7.6",
+    "framer-motion": "^12.7.3",
+    "heroui-cli": "^1.2.2",
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "3"
+  }
+}
