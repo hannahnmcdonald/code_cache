@@ -826,7 +826,7 @@
     "@react-types/shared" "3.28.0"
     clsx "^1.2.1"
 
-"@heroui/system@2.4.13":
+"@heroui/system@2.4.13", "@heroui/system@^2.4.13":
   version "2.4.13"
   resolved "https://registry.yarnpkg.com/@heroui/system/-/system-2.4.13.tgz#7b098753e020994ca422a58dd0b54040d50f6bc4"
   integrity sha512-4kL9SSEt+ohEbAsFCsZC6hdjBmwghEjeYsVytkOwI0rkXfu57onlZhJqvpIMnausHFL9DJ/oxzBghvFaA7dUxw==
@@ -881,7 +881,7 @@
     "@react-types/tabs" "3.3.13"
     scroll-into-view-if-needed "3.0.10"
 
-"@heroui/theme@2.4.13":
+"@heroui/theme@2.4.13", "@heroui/theme@^2.4.13":
   version "2.4.13"
   resolved "https://registry.yarnpkg.com/@heroui/theme/-/theme-2.4.13.tgz#51c955fbd50ef080953a59c58b6e9aebd0b2818e"
   integrity sha512-W1wm/x3dx9rZXNdyvjQRueK+9ieTpT2icyttGuVEn7NWgzMhpIbEKsAwtTLZGc5zMHJE2cxJQ/jpdCR8HBe0Dw==
