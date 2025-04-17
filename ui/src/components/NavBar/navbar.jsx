@@ -4,7 +4,7 @@ import logo from '../../img/code-cache-logo.png';
 
 export const CodeCacheLogo = () => {
   return (
-    <img src={logo} />
+    <img src={logo} alt="code cache logo"/>
   );
 };
 
