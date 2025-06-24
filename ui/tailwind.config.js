@@ -19,7 +19,6 @@ module.exports = {
           extend: "dark", // <- inherit default values from dark theme
           colors: {
             background: "#78deb2",
-            background: "linear-gradient(90deg,rgba(120, 222, 178, 1) 0%, rgba(87, 199, 180, 1) 9%, rgba(82, 113, 255, 1) 100%)",
           //   primary: {
           //     50: "#3B096C",
           //     100: "#520F83",
