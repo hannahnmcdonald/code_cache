@@ -1,12 +1,16 @@
 nav {
-    background-color: rgba(255, 255, 255, 0.25); /* white with 80% opacity */
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(6px); /* frosted-glass effect */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12 rem;              /* Sidebar width */
+  height: 100vh;             /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.25);  /* semi-transparent */
+  backdrop-filter: blur(6px);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  z-index: 1000;
+}
 
   nav a {
     text-decoration: none;
