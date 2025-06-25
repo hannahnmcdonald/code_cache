@@ -2,18 +2,17 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { notes } from './notesList';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
 
 export default function NoteViewer() {
   const { id } = useParams();
   const [content, setContent] = useState('Loading');
-  console.log(content)
 
   useEffect(() => {
     const note = notes.find(n => n.id === id);
-    console.log('fetching:', `/notes/${note?.file}`);
-    console.log(note)
     if (note) {
-      fetch(`/notes/${note?.file}`)
+      fetch(`/notes/${note.file}`)
         .then(res => res.text())
         .then(setContent);
     } else {
@@ -24,8 +23,12 @@ export default function NoteViewer() {
   if (!content) return <p>Loading...</p>;
 
   return (
-    <div style={{ padding: '1rem' }}>
-      <ReactMarkdown>{content}</ReactMarkdown>
+    <div style={{ padding: '1rem' }} className="markdown-body">
+      <ReactMarkdown
+        children={content}
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeSlug]}
+      />
     </div>
   );
 }

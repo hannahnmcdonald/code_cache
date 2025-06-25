@@ -9,3 +9,7 @@ body {
   background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364); /* dark blue tones */
   min-height: 100vh;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -14,3 +14,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
+.markdown-body a {
+  color: #007acc;
+  text-decoration: none;
+  border-bottom: 1px dotted #007acc; /* Optional underline alternative */
+  transition: color 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: #005999;
+  text-decoration: underline;
+}
+
+.markdown-body a:visited {
+  color: #007acc; /* Same as normal to avoid purple */
+}

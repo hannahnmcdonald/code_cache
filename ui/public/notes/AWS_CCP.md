@@ -1,8 +1,37 @@
 # AWS Certified Cloud Practitioner Study Notes
 
+## Table of Contents
+- [Foundations of Cloud Computing (26%)](#foundations-of-cloud-computing-26)
+  - [Advantages of Cloud Computing](#advantages-of-cloud-computing)
+- [Technology (33%)](#technology-33)
+  - [Exploring Compute Services](#exploring-compute-services)
+    - [EC2](#ec2)
+  - [Lamda](#lamda)
+  - [Additional Compute Services ](#additional-compute-services)
+    - [Fargate ](#fargate)
+    - [Lightsail](#lightsail)
+    - [Outposts](#outposts)
+    - [Batch](#batch)
+  - [S3](#s3)
+  - [Additional Storage Services](#additional-storage-services)
+  - [VPC](#vpc)
+  - [Additional Networking Services](#additional-networking-services)
+  - [SQS](#sqs)
+  - [SNS](#sns)
+  - [SES](#ses)
+- [Security & Compliance (25%)](#security--compliance-25)
+  - [Shared Responsibility Model](#shared-responsibility-model)
+  - [IAM Users](#iam-users)
+  - [IAM Permissions](#iam-permissions)
+- [Pricing, Billing, & Governance (16%)](#pricing-billing--governance-16)
+  - [AWS Pricing](#aws-pricing)
+
+
+---
 ## Foundations of Cloud Computing (26%)
 
 ### Advantages of Cloud Computing
+
 -----------------------------
 
 Virtualization lets you divide hardware resources on a single server into smaller units (Virtual Machines, or VMs)
@@ -17,15 +46,15 @@ Usage is placed on a meter- you pay only when you access it and only for what yo
 
 1.  Go global in minutes (Deploy applications around the world in the click of a button)
 
-2.  Stop spending money running and maintaining data centers (You can focus on building your applications instead of managing hardware)
+1.  Stop spending money running and maintaining data centers (You can focus on building your applications instead of managing hardware)
 
-3.  Benefit from massive economies of scale (Volume discounts are passed on to you, which provides lower pay-as-you-go prices)
+1.  Benefit from massive economies of scale (Volume discounts are passed on to you, which provides lower pay-as-you-go prices)
 
-4.  Increase speed and agility (The provided services allow you to innovate more quickly and deliver your applications faster)
+1.  Increase speed and agility (The provided services allow you to innovate more quickly and deliver your applications faster)
 
-5.  Stop guessing capacity (Capacity matched to your demand)
+1.  Stop guessing capacity (Capacity matched to your demand)
 
-6.  Trade capital expense for variable expense (Pay for what you use instead of making huge upfront investments)
+1.  Trade capital expense for variable expense (Pay for what you use instead of making huge upfront investments)
 
 The benefits of cloud computing:
 
@@ -138,10 +167,11 @@ Programmatic Access provides access to your AWS resources through an application
 
 1.  CLI- Terminal
 
-2.  Application Code- using SDKs and programmatic calls
+1.  Application Code- using SDKs and programmatic calls
 
-3.  SDKs (Software Development Kits)
+1.  SDKs (Software Development Kits)
 
+---
 ## Technology (33%)
 
 ### Exploring Compute Services
@@ -159,21 +189,21 @@ EC2
 
 1.  Deploy a database
 
-2.  Deploy a web application
+1.  Deploy a web application
 
 How to access your EC2 instances
 
 1.  AWS Management Console (web browser)
 
-2.  SSH (Secure Shell) **Most Common
+1.  SSH (Secure Shell) **Most Common
 
 1.  Generate a key pair (Private and Public)
 
-2.  Connect via SSH (SSH client locally uses private key and EC2 instance uses public key)
+1.  Connect via SSH (SSH client locally uses private key and EC2 instance uses public key)
 
-4.  EC2 Instance Connect (EIC)- use IAM policies to control SSH access to your instances without needing the manage SSH keys
+1.  EC2 Instance Connect (EIC)- use IAM policies to control SSH access to your instances without needing the manage SSH keys
 
-5.  AWS Systems Manager allows you to manage your EC2 instances via a web browser or the AWS CLI
+1.  AWS Systems Manager allows you to manage your EC2 instances via a web browser or the AWS CLI
 
 EC2 Pricing Options 
 
@@ -183,91 +213,91 @@ EC2 Pricing Options 
 
 1.  You care about low cost without any upfront payment or long term commitment 
 
-2.  Your applications have unpredictable workloads that can't be interrupted
+1.  Your applications have unpredictable workloads that can't be interrupted
 
-3.  Applications under development
+1.  Applications under development
 
-4.  Your workloads do not run longer than a year
+1.  Your workloads do not run longer than a year
 
-3.  Fun facts:
+1.  Fun facts:
 
 1.  You can reserve capacity using On-Demand Capacity Reservations.
 
-2.  The EC2 capacity is held for you whether or not you run the instance.
+1.  The EC2 capacity is held for you whether or not you run the instance.
 
-3.  Spot- Lets you take advantage of the unused EC2 capacity. Your request is only fulfilled if capacity is available ** CHEAPEST
+1.  Spot- Lets you take advantage of the unused EC2 capacity. Your request is only fulfilled if capacity is available ** CHEAPEST
 
 1.  Use this when
 
 1.  You are not concerned about the start or stop time of your application
 
-2.  Your workloads can be interrupted
+1.  Your workloads can be interrupted
 
-3.  Your application is only feasible at very low compute prices
+1.  Your application is only feasible at very low compute prices
 
-3.  Fun Facts:
+1.  Fun Facts:
 
 1.  You can save up to 90% off on-demand prices
 
-2.  You pay the spot price that's in effect at the beginning of each hour
+1.  You pay the spot price that's in effect at the beginning of each hour
 
-5.  Reserved Instances- Allow you to commit to a specific instance type in a particular region for 1 or 3 years.
+1.  Reserved Instances- Allow you to commit to a specific instance type in a particular region for 1 or 3 years.
 
 1.  Use this when
 
 1.  Your application has steady state usage, and you commit to 1 or 3 years
 
-2.  You can pay money upfront in order to receive a discount on On-Demand prices.
+1.  You can pay money upfront in order to receive a discount on On-Demand prices.
 
-3.  Your application requires a capacity reservation. 
+1.  Your application requires a capacity reservation. 
 
-3.  Fun Facts:
+1.  Fun Facts:
 
 1.  You can save up to 75% off On-Demand prices
 
-2.  You are required to sign a contract
+1.  You are required to sign a contract
 
-3.  You can reserve capacity in an Availability Zone for any duration
+1.  You can reserve capacity in an Availability Zone for any duration
 
-4.  You can pay All Upfront, Partial Upfront, or No Upfront. All Upfront for the max term earns the highest discount.
+1.  You can pay All Upfront, Partial Upfront, or No Upfront. All Upfront for the max term earns the highest discount.
 
-5.  Provides convertible types at 54% discount. 
+1.  Provides convertible types at 54% discount. 
 
-7.  Dedicated Hosts- Allow you to pay for a physical server that is fully dedicated to running your instances
+1.  Dedicated Hosts- Allow you to pay for a physical server that is fully dedicated to running your instances
 
 1.  Use this when
 
 1.  You want to bring your own server-bound software license from vendors like Microsoft or Oracle
 
-2.  You have regulatory or corporate compliance requirements around tenancy model
+1.  You have regulatory or corporate compliance requirements around tenancy model
 
-3.  Fun facts:
+1.  Fun facts:
 
 1.  You can save up to 70% off On-Demand prices
 
-2.  You bring your existing per-socket, per-core, or per-VM software licenses.
+1.  You bring your existing per-socket, per-core, or per-VM software licenses.
 
-3.  There is no multi-tenancy, meaning the server is not shared with other customers.
+1.  There is no multi-tenancy, meaning the server is not shared with other customers.
 
-4.  A Dedicated Host is a physical server, whereas a Dedicated Instance runs on the host
+1.  A Dedicated Host is a physical server, whereas a Dedicated Instance runs on the host
 
-9.  Saving Plans- Allows you to commit to compute usage (measured per hour) for 1 or 3 years. 
+1.  Saving Plans- Allows you to commit to compute usage (measured per hour) for 1 or 3 years. 
 
 1.  Use this when
 
 1.  You want to lower your bill across multiple compute services
 
-2.  You want the flexibility to change compute services, instance types, operating systems, or Regions.
+1.  You want the flexibility to change compute services, instance types, operating systems, or Regions.
 
-3.  Fun facts:
+1.  Fun facts:
 
 1.  You can save up to 72% off On-Demand prices.
 
-2.  You are not making a commitment to a Dedicated Host, just compute usage. 
+1.  You are not making a commitment to a Dedicated Host, just compute usage. 
 
-3.  Savings can be shared across various compute services like EC2, Fargate, Lamda.
+1.  Savings can be shared across various compute services like EC2, Fargate, Lamda.
 
-4.  This does NOT provide a capacity reservation.
+1.  This does NOT provide a capacity reservation.
 
 ### Lamda
 
@@ -628,21 +658,21 @@ One or more physically separated data centers, each with redundant power, networ
 
 -   Where you launch resources like EC2 instances
 
-3.  VPC
+1.  VPC
 
 -   A private network in the AWS cloud
 
-5.  NACL
+1.  NACL
 
 -   Network ACL
 
 -   Access Control Lists (ACL) ensure proper traffic allowed to subnet
 
-7.  Router/Route Table
+1.  Router/Route Table
 
 -   Defines where network traffic is routed
 
-9.  Internet Gateway
+1.  Internet Gateway
 
 -   Allows public traffic to internet from VPC
 
@@ -676,9 +706,9 @@ Direct Connect in the real world:
 
 1.  Large Datasets- Transfer large datasets to AWS
 
-2.  Business Critical Data- Transfer internal data directly to AWS, bypassing your internet service provider
+1.  Business Critical Data- Transfer internal data directly to AWS, bypassing your internet service provider
 
-3.  Hybrid Model- Build Hybrid environments
+1.  Hybrid Model- Build Hybrid environments
 
 3\. AWS VPN- Site-to-Site VPN created a secure connection between your internal networks and your AWS VPCs
 
@@ -696,13 +726,13 @@ Site-to-Site VPN
 
 1.  VPC- The private network within the AWS cloud
 
-2.  Subnet
+1.  Subnet
 
 -   Allows you to split the network within a VPC
 
 -   Where you launch resources like EC2 instances
 
-4.  Availability Zone- One or more physically separated data centers, each with redundant power, networking, and connectivity, housed in separate facilities.
+1.  Availability Zone- One or more physically separated data centers, each with redundant power, networking, and connectivity, housed in separate facilities.
 
 -   Physically separated
 
@@ -712,13 +742,13 @@ Site-to-Site VPN
 
 -   Allows for high availability
 
-6.  Router- Defines where network traffic is routed
+1.  Router- Defines where network traffic is routed
 
-7.  Virtual Private Gateway- VPN connector on the AWS side
+1.  Virtual Private Gateway- VPN connector on the AWS side
 
-8.  Site-to-Site VPN- The secure connection between internal networks and AWS
+1.  Site-to-Site VPN- The secure connection between internal networks and AWS
 
-9.  Customer Gateway- The VPN connector on the customer side
+1.  Customer Gateway- The VPN connector on the customer side
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcPpf9AKp0AH-DHrZJ7rQD8nzDxNNoW0LS33-uMfVPMx4Zop4hOJ3exZmHB8wrlv3UulhpMeF9lDWBSyy6cssQEUNW29BdsTrlj6bOdWqyTmyK_mQzSimaD7Rwc0ByqFV7O3X_0cA?key=HIW88Kb672kZiE67FhGoGg)
 
@@ -773,7 +803,7 @@ Databases allow us to collect, sort, retrieve, graph, and manipulate data.
 
 -   ONLY supports MySQL PostgreSQL
 
-3.  DynamoDB
+1.  DynamoDB
 
 -   NoSQL key value database
 
@@ -785,7 +815,7 @@ Databases allow us to collect, sort, retrieve, graph, and manipulate data.
 
 -   NoSQL DB fast enough to handle millions of requests per second
 
-5.  DocumentDB
+1.  DocumentDB
 
 -   Document database
 
@@ -797,7 +827,7 @@ Databases allow us to collect, sort, retrieve, graph, and manipulate data.
 
 -   Best option to operate MongoDB workloads at scale
 
-7.  ElastiCache
+1.  ElastiCache
 
 -   In-memory datastore
 
@@ -809,7 +839,7 @@ Databases allow us to collect, sort, retrieve, graph, and manipulate data.
 
 -   Best option to alleviate database load for data that is accessed often
 
-9.  Neptune
+1.  Neptune
 
 -   Graph database service
 
@@ -848,29 +878,29 @@ Snow Family- Allows you to transfer large amounts of on-premises data to AWS usi
 
 1.  Smallest member of data transport devices
 
-2.  8 terabytes of usable storage
+1.  8 terabytes of usable storage
 
-3.  Offline shipping
+1.  Offline shipping
 
-4.  Online with DataSync
+1.  Online with DataSync
 
-3.  Snowball and Snowball Edge
+1.  Snowball and Snowball Edge
 
 1.  Petabyte-scale data transport solution
 
-2.  Transfer data in and out
+1.  Transfer data in and out
 
-3.  Cheaper than internet transfer
+1.  Cheaper than internet transfer
 
-4.  Snowball Edge supports EC2 and Lambda
+1.  Snowball Edge supports EC2 and Lambda
 
-5.  Snowmobile
+1.  Snowmobile
 
 1.  Multi-petabyte or exabyte scale
 
-2.  Data loaded to S3
+1.  Data loaded to S3
 
-3.  Securely Transported
+1.  Securely Transported
 
 Data Sync- allows for online data transfer from on-premises to AWS storage 
 
@@ -915,7 +945,7 @@ Analytics- The act of querying or processing your data
 
 -   Considered serverless
 
-3.  Glue- prepares your data for analytics
+1.  Glue- prepares your data for analytics
 
 -   Extract, transform, load (ETL) service
 
@@ -923,13 +953,13 @@ Analytics- The act of querying or processing your data
 
 -   Helps to better understand your data
 
-5.  Kinesis- allows you to analyze data and video streams in real time
+1.  Kinesis- allows you to analyze data and video streams in real time
 
 -   Analyze real-time, streaming data
 
 -   Supports video, audio, application logs, website clickstreams, and IoT
 
-7.  Elastic MapReduce (EMR) - helps you process large amounts of data
+1.  Elastic MapReduce (EMR) - helps you process large amounts of data
 
 -   Process big data
 
@@ -937,7 +967,7 @@ Analytics- The act of querying or processing your data
 
 -   Works with big data frameworks
 
-9.  Data Pipeline- helps you move data between compute and storage services running either on AWS or on-premises
+1.  Data Pipeline- helps you move data between compute and storage services running either on AWS or on-premises
 
 -   Moves data at specific intervals
 
@@ -945,7 +975,7 @@ Analytics- The act of querying or processing your data
 
 -   Sends notifications on success or failure
 
-11. Quicksight- helps you visualize your data
+1. Quicksight- helps you visualize your data
 
 -   Build interactive dashboards
 
@@ -955,7 +985,7 @@ In the real world- 
 
 1.  Search data in S3- Athena helps you query historical data stored in S3 as if they were relational data using standard SQL
 
-2.  Log analytics- Kinesis helps you analyze logs in near real time for application monitoring or fraud detection
+1.  Log analytics- Kinesis helps you analyze logs in near real time for application monitoring or fraud detection
 
 Leveraging Machine Learning Services
 ------------------------------------
@@ -1031,7 +1061,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   Cloud9 preconfigures the development environment with the needed SDKs and libraries. You can easily write code for your Lambda function directly in your web browser
 
-3.  CodeCommit- a source control system for private Git repositories
+1.  CodeCommit- a source control system for private Git repositories
 
 -   Create repositories to store code
 
@@ -1041,7 +1071,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   Can be used to manage source code and the different versions of application files. Similar to Github
 
-5.  CodeBuild- allows you to build and test your application source code
+1.  CodeBuild- allows you to build and test your application source code
 
 -   Compiles source code and runs tests
 
@@ -1051,7 +1081,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   CodeBuild allows you to run as many parallel streams of tests as needed, allowing you to deploy your changes to production more quickly.
 
-7.  CodeDeploy- manages the deployment of code to compute services in the cloud or on-premises
+1.  CodeDeploy- manages the deployment of code to compute services in the cloud or on-premises
 
 -   Deploys code to EC2, Fargate, Lambda, and on-premises
 
@@ -1059,7 +1089,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   Codedeploy eliminated the downtime of your application when deploying a new version due its rolling deployments
 
-9.  CodePipeline- automates the software release process
+1.  CodePipeline- automates the software release process
 
 -   Allows you to implement a CI/CD pipeline
 
@@ -1073,7 +1103,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   When combined with other developer tools, CodePipeline helps development teams implement DevOps practices that automate testing and the movement of code to production
 
-11. X-Ray- helps you debug production applications
+1. X-Ray- helps you debug production applications
 
 -   Analyze the debug production applications
 
@@ -1083,7 +1113,7 @@ Developer Tools used by developers to accelerate software development and the re
 
 -   X-Ray can help you map requests made to your RDS database from within your application. You can track information about the SQL queries generated and more
 
-13. CodeStar- helps developers collaboratively work on development projects
+1. CodeStar- helps developers collaboratively work on development projects
 
 -   Developers connect their development environment
 
@@ -1112,7 +1142,7 @@ Infrastructure as Code (IaC)- allows you to write a script to provision AWS reso
 
 -   You can use CloudFormation to automate the create of EC2 instances in your AWS account
 
-3.  Elastic Beanstalk- allows you to deploy your web applications and web services to AWS
+1.  Elastic Beanstalk- allows you to deploy your web applications and web services to AWS
 
 -   Orchestration service that provisions resources
 
@@ -1124,7 +1154,7 @@ Infrastructure as Code (IaC)- allows you to write a script to provision AWS reso
 
 -   ONLY deploys to cloud, not for on-premises
 
-5.  OpsWorks- allows you to use Chef or Puppet to automate the configuration of your servers and deploy code
+1.  OpsWorks- allows you to use Chef or Puppet to automate the configuration of your servers and deploy code
 
 -   Deploy code and manage applications
 
@@ -1184,11 +1214,11 @@ You can answer many questions using auditing, monitoring, and logging services o
 
 1.  Who signed in and made changes via the AWS Management Console?
 
-2.  What is the current load on this EC2 instance?
+1.  What is the current load on this EC2 instance?
 
-3.  What is the root cause of this application error?
+1.  What is the root cause of this application error?
 
-4.  Which execution path resulted in this error?
+1.  Which execution path resulted in this error?
 
 Services:
 
@@ -1218,7 +1248,7 @@ Services:
 
 -   Receive a notification when root user activity is detected in your account- create a CloudWatch event rule to notify you when root user API calls are detected in your account indicating root user activity
 
-3.  CloudTrail- track user activity and API calls within your account
+1.  CloudTrail- track user activity and API calls within your account
 
 -   Log and retain account activity
 
@@ -1236,15 +1266,15 @@ Services:
 
 1.  Username
 
-2.  Access Key
+1.  Access Key
 
-3.  Event Time & Name
+1.  Event Time & Name
 
-4.  Region
+1.  Region
 
-5.  IP Address
+1.  IP Address
 
-6.  Error code
+1.  Error code
 
 Additional Services
 -------------------
@@ -1255,7 +1285,7 @@ Additional Services
 
 -   Enables employees to work from home
 
-2.  Amazon Connect- a cloud contact center service
+1.  Amazon Connect- a cloud contact center service
 
 -   Provides customer service functionality
 
@@ -1263,22 +1293,24 @@ Additional Services
 
 -   Helps you build a help desk in the cloud
 
+---
 ## Security & Compliance (25%)
 
 ### Shared Responsibility Model
+
 ---------------------------
 
 Security of the Cloud: AWS is responsible for protecting and securing their infrastructure
 
 1.  AWS Global Infrastructure- AWS is responsible for its global infrastructure elements: regions, edge locations, and AZs
 
-2.  Building Security- AWS controls access to its data centers where your data resides
+1.  Building Security- AWS controls access to its data centers where your data resides
 
-3.  Networking Components- AWS maintains networking components: generators, uninterruptible power supply (UPS) systems, computer room air conditioning (CRAC units), fire suppression systems, and more. 
+1.  Networking Components- AWS maintains networking components: generators, uninterruptible power supply (UPS) systems, computer room air conditioning (CRAC units), fire suppression systems, and more. 
 
-4.  Software- AWS is responsible for any managed service like RDS, S3, ECS, or Lambda, patching of host operating systems, and data access endpoints
+1.  Software- AWS is responsible for any managed service like RDS, S3, ECS, or Lambda, patching of host operating systems, and data access endpoints
 
-5.  Real world responsibilities:
+1.  Real world responsibilities:
 
 -   Language versions of Lambda
 
@@ -1294,17 +1326,17 @@ Security in the Cloud: You are responsible for how the services are implements a
 
 1.  Application Data- You are responsible for managing your application data, which includes encryption options
 
-2.  Security Configuration- You are responsible for securing your account and API calls, rotating credentials, restricting internet access from your VPCs, and more
+1.  Security Configuration- You are responsible for securing your account and API calls, rotating credentials, restricting internet access from your VPCs, and more
 
-3.  Patching- You are responsible for the guest operating system (OS) which includes updates and security patches
+1.  Patching- You are responsible for the guest operating system (OS) which includes updates and security patches
 
-4.  Identity and Access Management- You are responsible for application security and identity and access management.
+1.  Identity and Access Management- You are responsible for application security and identity and access management.
 
-5.  Network Traffic- You are responsible for network traffic protection, which includes security group firewall configuration.
+1.  Network Traffic- You are responsible for network traffic protection, which includes security group firewall configuration.
 
-6.  Installed Software- You are responsible for your application code, installed software, and more. You should frequently scan for and patch vulnerabilities in your code. 
+1.  Installed Software- You are responsible for your application code, installed software, and more. You should frequently scan for and patch vulnerabilities in your code. 
 
-7.  Real world responsibilities:
+1.  Real world responsibilities:
 
 -   Patching the guest operating system for EC2
 
@@ -1326,7 +1358,7 @@ EC2 Shared Responsibility Model:
 
 -   Security controls
 
-3.  AWS
+1.  AWS
 
 -   EC2 service
 
@@ -1344,7 +1376,7 @@ Lambda Shared Responsibility Model:
 
 -   IAM for permissions
 
-3.  AWS
+1.  AWS
 
 -   Lamda service
 
@@ -1366,13 +1398,13 @@ Shared Security Responsibilities:
 
 -   AWS- Patching infrastructure
 
-3.  Configuration Management
+1.  Configuration Management
 
 -   You- configuring databases and applications
 
 -   AWS- configuring infrastructure devices
 
-5.  Awareness and Training
+1.  Awareness and Training
 
 -   You- your employees
 
@@ -1395,7 +1427,7 @@ The 6 pillars of the Well-Architected Framework describe design principles and b
 
 -   Learn from failure and refine
 
-3.  Security
+1.  Security
 
 -   Focus on putting mechanisms in place that help protect your systems and data
 
@@ -1409,7 +1441,7 @@ The 6 pillars of the Well-Architected Framework describe design principles and b
 
 -   Ensure security at all application layers
 
-5.  Reliability
+1.  Reliability
 
 -   Focus on designing systems that work consistently and recover quickly
 
@@ -1423,7 +1455,7 @@ The 6 pillars of the Well-Architected Framework describe design principles and b
 
 -   Test recovery procedures
 
-7.  Performance Efficiency
+1.  Performance Efficiency
 
 -   Focus on the effective use of computing resources to meet system and business requirements while removing bottlenecks
 
@@ -1435,7 +1467,7 @@ The 6 pillars of the Well-Architected Framework describe design principles and b
 
 -   Experiment with virtual resources
 
-9.  Cost Optimization
+1.  Cost Optimization
 
 -   Focus on delivering optimum and resilient solutions at the least cost to the user
 
@@ -1447,7 +1479,7 @@ The 6 pillars of the Well-Architected Framework describe design principles and b
 
 -   Pay only for resources your application requires
 
-11. Sustainability
+1. Sustainability
 
 -   Focus on environmental impacts, especially energy consumption and efficiency
 
@@ -1492,13 +1524,13 @@ Users are entities you create in IAM to represent the person or application need
 
 -   A root user can close your account, change your email address, or modify your support plan
 
-3.  Individual User- created in IAM and are used for everyday tasks
+1.  Individual User- created in IAM and are used for everyday tasks
 
 -   An individual user can perform administrative tasks, access application code, launch EC2 instances, or configure databases
 
 -   * Don't forget activity performed by users in your account is billed to your account!
 
-5.  Applications- You'll create a user in IAM so you can generate access keys for an application running on-premises that needs access to your cloud resource
+1.  Applications- You'll create a user in IAM so you can generate access keys for an application running on-premises that needs access to your cloud resource
 
 Principle of Least Privilege involves giving a user the minimum access required to get the job done
 
@@ -1508,9 +1540,9 @@ Groups: A collection of IAM users that help you apply common access controls to 
 
 1.  Administrators- Perform administrative tasks such as creating new users
 
-2.  Developers- Use compute and database services to build applications
+1.  Developers- Use compute and database services to build applications
 
-3.  Analysts- Run budget and usage reports
+1.  Analysts- Run budget and usage reports
 
 ** Groups are users that perform similar tasks, access permissions apply to ALL members of the group, and access is assigned using policies and roles
 
@@ -1522,13 +1554,13 @@ Roles- define access permissions and are temporarily assumed by an IAM user or s
 
 1.  You assume a role to perform a task in a single session
 
-2.  Assumed by any user or service that needs it
+1.  Assumed by any user or service that needs it
 
-3.  Access is assigned using policies
+1.  Access is assigned using policies
 
-4.  You grant users in one AWS account access to resources in another AWS account
+1.  You grant users in one AWS account access to resources in another AWS account
 
-5.  Roles in the real world: You can attach a role to an instance that provides privileges to applications running on the instance. Roles help you avoid sharing long term credentials like access keys and protect your instances from unauthorized access
+1.  Roles in the real world: You can attach a role to an instance that provides privileges to applications running on the instance. Roles help you avoid sharing long term credentials like access keys and protect your instances from unauthorized access
 
 Policies- You manage permissions for IAM users, groups, and roles by creating a policy document in JSON format and attaching it
 
@@ -1542,11 +1574,11 @@ Best IAM Practices:
 
 1.  Enable MFA for privileged users
 
-2.  Implement strong password policies
+1.  Implement strong password policies
 
-3.  Create individual users instead of using root
+1.  Create individual users instead of using root
 
-4.  Use roles for Amazon EC2 instances (instead of long term credentials like access keys)
+1.  Use roles for Amazon EC2 instances (instead of long term credentials like access keys)
 
 IAM credential report:
 
@@ -1689,74 +1721,76 @@ SecretsManager- allows you to manage and retrieve secrets (passwords or keys)
 
 -   In the real world: retrieve database credentials needed for your application code. SecretsManager allows you retrieve database credentials with a call to Secret Manager APIs, removing the need to hardcode sensitive information in plain text within your application code
 
+---
 ## Pricing, Billing, & Governance (16%)
 
 ### AWS Pricing
+
 -----------
 
 3 Fundamentals drive cost:
 
 1.  Compute- hourly from launch to termination
 
-2.  Storage- the data you store in the cloud
+1.  Storage- the data you store in the cloud
 
-3.  Outbound Data Transfer- data in flight moving between systems
+1.  Outbound Data Transfer- data in flight moving between systems
 
 3 different types of free offers available depending on service:
 
 1.  12 Months Free
 
-2.  Always Free
+1.  Always Free
 
-3.  Trials
+1.  Trials
 
 EC2 Pricing
 
 1.  On-Demand- by the hour or second without pre-paying
 
-2.  Savings Plan- commit to compute usage measured per hour for a 1- or 3-year term
+1.  Savings Plan- commit to compute usage measured per hour for a 1- or 3-year term
 
-3.  Reserved Instances- commit to use for 1 or 3 years; pay regardless of usage
+1.  Reserved Instances- commit to use for 1 or 3 years; pay regardless of usage
 
-4.  Spot Instances- instances only launch if spare capacity is available
+1.  Spot Instances- instances only launch if spare capacity is available
 
-5.  Dedicated Hosts- an entire physical server just for you
+1.  Dedicated Hosts- an entire physical server just for you
 
 Lambda Pricing
 
 1.  Number of requests- includes tests invoked from console
 
-2.  Code execution time- from execution start, in response to events, to stop
+1.  Code execution time- from execution start, in response to events, to stop
 
-3.  Always free- 1 million requests per month
+1.  Always free- 1 million requests per month
 
 S3 Pricing
 
 1.  Storage Class- various storage classes
 
-2.  Storage- Number and size of objects
+1.  Storage- Number and size of objects
 
-3.  Data Transfer- data transferred out of S3 Region
+1.  Data Transfer- data transferred out of S3 Region
 
-4.  Request and Data Retrieval- requests made for data and amount of requests
+1.  Request and Data Retrieval- requests made for data and amount of requests
 
 RDS Pricing
 
 1.  Running clock hours
 
-2.  Type of databases
+1.  Type of databases
 
-3.  Storage
+1.  Storage
 
-4.  Purchase type
+1.  Purchase type
 
-5.  Database count
+1.  Database count
 
-6.  API requests
+1.  API requests
 
-7.  Deployment type
+1.  Deployment type
 
-8.  Data transfer
+1.  Data transfer
 
 TCO- Total Cost of Ownership- The financial estimate that helps you understand both the direct and indirect costs of AWS
 
@@ -1772,9 +1806,9 @@ Ways to reduce your TCO:
 
 1.  Minimize capital expenditures- AWS helps you minimize large capital expenditures, which reduces your TCO
 
-2.  Utilize reserved instances- AWS provides Reserved Instances to help you lock in savings and reduce your TCO
+1.  Utilize reserved instances- AWS provides Reserved Instances to help you lock in savings and reduce your TCO
 
-3.  Right size your resources- AWS helps you match the provisioning of resources to your usage needs to reduce your TCO
+1.  Right size your resources- AWS helps you match the provisioning of resources to your usage needs to reduce your TCO
 
 AWS Price List API
 
@@ -1967,7 +2001,7 @@ There are 4 types of support plans
 
 -   24/7 access via email only
 
-3.  Developer (starts at $29/mo and recommended for testing/development)
+1.  Developer (starts at $29/mo and recommended for testing/development)
 
 -   Account/Billing, Service limit increases, & technical support
 
@@ -1979,7 +2013,7 @@ There are 4 types of support plans
 
 -   Response times <24 hr for general guidance, <12 hr for system impaired
 
-5.  Business (starts at $100/mo and is recommended for production workloads)
+1.  Business (starts at $100/mo and is recommended for production workloads)
 
 -   Account/Billing, Service limit increases, & technical support
 
@@ -1993,7 +2027,7 @@ There are 4 types of support plans
 
 -   Response times <24 hr for general guidance, <12 hr for system impaired, <4 hr for production system impaired, and <1 hr for production system down
 
-7.  Enterprise (starts at $15,000/mo and is recommended for business or mission--critical production workloads) 
+1.  Enterprise (starts at $15,000/mo and is recommended for business or mission--critical production workloads) 
 
 -   Account/Billing, Service limit increases, & technical support
 
@@ -2017,8 +2051,8 @@ Support case types:
 
 1.  Account & Billing- Account-related and billing cases can be opened by all customers
 
-2.  Service Limit Increases- default service quote (or limit) increases can be opened by all customers
+1.  Service Limit Increases- default service quote (or limit) increases can be opened by all customers
 
-3.  Technical Support- technical support cases can only be opened by customers on the developer, business, or enterprise plans
+1.  Technical Support- technical support cases can only be opened by customers on the developer, business, or enterprise plans
 
 ** AWS support does NOT allow cases for code development, debugging custom software, or performing system administration tasks
