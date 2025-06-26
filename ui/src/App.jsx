@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Navbar from './components/NavBar/navbar'
-import NoteViewer from './components/noteViewer'
+import NoteViewer from './components/noteViewer.jsx'
 
 function App() {
   return (
