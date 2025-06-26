@@ -3,7 +3,6 @@ export const notes = [
     { id: 'Accessibility', title: 'Accessibility', file: 'Accessibility.md' },
     { id: 'APIs', title: 'APIs', file: 'APIs.md' },
     { id: 'CSS', title: 'CSS', file: 'CSS.md' },
-    { id: 'CI/CD', title: 'CI/CD', file: 'CI/CD.md' },
     { id: 'DesignPatterns', title: 'Design Patterns', file: 'DesignPatterns.md' },
     { id: 'Docker', title: 'Docker', file: 'Docker.md' },
     { id: 'GraphQL', title: 'GraphQL', file: 'GraphQL.md' },
