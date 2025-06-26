@@ -2,6 +2,7 @@
   "name": "code_cache",
   "version": "0.1.0",
   "private": false,
+  "type": "module",
   "homepage": "https://hannahnmcdonald.github.io/code_cache",
   "dependencies": {
     "@heroui/navbar": "^2.2.15",
