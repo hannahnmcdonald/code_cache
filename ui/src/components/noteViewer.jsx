@@ -5,8 +5,35 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeRaw from 'rehype-raw';
+import { visit } from 'unist-util-visit';
+import { nanoid } from 'nanoid';
 
 const baseUrl = import.meta.env.VITE_PUBLIC_URL;
+
+// Custom plugin to override link behavior
+function remarkHandleTocLinks() {
+  return (tree) => {
+    visit(tree, 'link', (node) => {
+      if (node.url && node.url.startsWith('#')) {
+        const id = node.url.slice(1);
+        const text = node.children[0]?.value || id;
+        node.data = {
+          hName: 'a',
+          hProperties: {
+            href: `#${id}`,
+            onClick: (e) => {
+              e.preventDefault();
+              const el = document.getElementById(id);
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+              window.history.replaceState(null, '', `#${id}`);
+            },
+          },
+          hChildren: [{ type: 'text', value: text }],
+        };
+      }
+    });
+  };
+}
 
 export default function NoteViewer() {
   const { id } = useParams();
@@ -48,7 +75,7 @@ export default function NoteViewer() {
     <div style={{ padding: '1rem' }} className="markdown-body">
       <ReactMarkdown
         children={content}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkHandleTocLinks]}
         rehypePlugins={[rehypeSlug, rehypeRaw]}
       />
     </div>
