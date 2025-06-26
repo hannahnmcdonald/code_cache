@@ -4,6 +4,9 @@ import { notes } from './notesList';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
+import rehypeRaw from 'rehype-raw';
+
+const baseUrl = import.meta.env.VITE_PUBLIC_URL;
 
 export default function NoteViewer() {
   const { id } = useParams();
@@ -12,7 +15,7 @@ export default function NoteViewer() {
   useEffect(() => {
     const note = notes.find(n => n.id === id);
     if (note) {
-      fetch(`/notes/${note.file}`)
+      fetch(`${baseUrl}/notes/${note.file}`)
         .then(res => res.text())
         .then(setContent);
     } else {
@@ -27,7 +30,7 @@ export default function NoteViewer() {
       <ReactMarkdown
         children={content}
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeSlug]}
+        rehypePlugins={[rehypeSlug, rehypeRaw]}
       />
     </div>
   );
