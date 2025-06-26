@@ -23,6 +23,25 @@ export default function NoteViewer() {
     }
   }, [id]);
 
+  useEffect(() => {
+  const handleHashChange = () => {
+    const hash = decodeURIComponent(window.location.hash.split('#')[1]);
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
+  // Trigger on initial load
+  handleHashChange();
+
+  // Listen to hash changes
+  window.addEventListener('hashchange', handleHashChange);
+  return () => window.removeEventListener('hashchange', handleHashChange);
+}, []);
+
   if (!content) return <p>Loading...</p>;
 
   return (
