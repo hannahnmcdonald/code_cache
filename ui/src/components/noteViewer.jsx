@@ -42,7 +42,6 @@ export default function NoteViewer() {
   return () => window.removeEventListener('hashchange', handleHashChange);
 }, []);
 
-
   if (!content) return <p>Loading...</p>;
 
   return (
